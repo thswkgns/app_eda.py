@@ -206,7 +206,10 @@ class Logout:
 # ---------------------
 class EDA:
     def __init__(self):
-        st.title("📊 EDA")
+        self.run()  # 클래스가 실행되면 바로 run() 메서드 실행
+
+    def run(self):
+        st.title("📊 데이터 분석")
 
         file = st.file_uploader("population_trends.csv 파일을 업로드해 주세요", type="csv")
         if file is None:
