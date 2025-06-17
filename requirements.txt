@@ -4,3 +4,4 @@ setuptools
 matplotlib.pyplot
 seaborn
 numpy
+pandas
