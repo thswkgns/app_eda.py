@@ -205,10 +205,8 @@ class Logout:
 # EDA 페이지 클래스
 # ---------------------
 class EDA:
-    def __init__(self):
-        self.run()  # 클래스가 실행되면 바로 run() 메서드 실행
 
-    def run(self):
+    def __init__(self):
         st.title("📊 데이터 분석")
 
         file = st.file_uploader("population_trends.csv 파일을 업로드해 주세요", type="csv")
@@ -241,6 +239,7 @@ class EDA:
             "4) 연도별 증감 상위 100",
             "5) 피벗 테이블·누적 영역"
         ])
+        st.rerun()
 
         # 1) 데이터 요약
         with tabs[0]:
@@ -254,6 +253,7 @@ class EDA:
 
             st.subheader("📈 요약 통계 (df.describe())")
             st.dataframe(df.describe(), use_container_width=True)
+            st.rerun()
 
         # 2) 전국 인구 추이
         with tabs[1]:
@@ -267,6 +267,7 @@ class EDA:
             ax1.set_ylabel("인구 수")
             ax1.grid(True)
             st.pyplot(fig1)
+            st.rerun()
 
         # 3) 최근 10년 지역별 변화량
         with tabs[2]:
@@ -289,9 +290,11 @@ class EDA:
             ax2.invert_yaxis()
             ax2.grid(axis="x", linestyle="--", alpha=0.5)
             st.pyplot(fig2)
+            st.rerun()
 
             with st.expander("🔍 변화량 상세 데이터"):
                 st.dataframe(change_df[["start", "end", "change"]], use_container_width=True)
+                st.rerun()
 
         # 4) 연도별 증감 상위 100
         with tabs[3]:
@@ -322,6 +325,7 @@ class EDA:
                 .format({"인구": "{:,.0f}", "증감": "{:+,.0f}"})
             )
             st.dataframe(styled, use_container_width=True)
+            st.rerun()
 
         # 5) 피벗 테이블 및 누적 영역 그래프
         with tabs[4]:
@@ -342,6 +346,7 @@ class EDA:
             ax3.legend(loc="upper left", bbox_to_anchor=(1.02, 1), title="지역")
             ax3.margins(0, 0)
             st.pyplot(fig3)
+            st.rerun()
 
 
 
