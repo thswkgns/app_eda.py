@@ -1,7 +1,7 @@
 #app_eda.py
 
 import streamlit as st
-import pyrebase
+import pyrebase4
 import time
 import io
 import pandas as pd
@@ -50,19 +50,21 @@ class Home:
 
         # Kaggle 데이터셋 출처 및 소개
         st.markdown("""
-                ---
-                **Bike Sharing Demand 데이터셋**  
-                - 제공처: [Kaggle Bike Sharing Demand Competition](https://www.kaggle.com/c/bike-sharing-demand)  
-                - 설명: 2011–2012년 캘리포니아 주의 수도인 미국 워싱턴 D.C. 인근 도시에서 시간별 자전거 대여량을 기록한 데이터  
-                - 주요 변수:  
-                  - `datetime`: 날짜 및 시간  
-                  - `season`: 계절  
-                  - `holiday`: 공휴일 여부  
-                  - `workingday`: 근무일 여부  
-                  - `weather`: 날씨 상태  
-                  - `temp`, `atemp`: 기온 및 체감온도  
-                  - `humidity`, `windspeed`: 습도 및 풍속  
-                  - `casual`, `registered`, `count`: 비등록·등록·전체 대여 횟수  
+                "populatioin trends(지역, 연도별 인구 변화 경향성)
+                - 주요 데이터
+                연도 
+                지역 (전국, 서울 , 부산, 대구, 인천, 대구, 울산, 경기 등등)
+                인구
+                출생아수
+                사망자수
+                
+                분석 종류
+                1) 데이터 요약
+                2) 전국 인구 추이
+                3) 최근 10년 지역별 변화량
+                4) 연도별 증감 상위 100
+                5) 피벗 테이블·누적 영역
+               
                 """)
 
 # ---------------------
